@@ -1,0 +1,147 @@
+Não precisa mandar vídeo nenhum 👍
+A atividade deixa claro que **os arquivos não precisam existir de fato**, então basta fazer a **marcação HTML correta**. Você só precisa criar o arquivo `.html` com a estrutura pedida.
+
+Segue o código completo:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Recursos Multimídia</h1>
+        <p>Página demonstrando recursos multimídia em HTML5.</p>
+    </header>
+
+    <main>
+
+        <!-- BLOCO 1 -->
+        <figure>
+
+            <video
+                controls
+                width="800"
+                height="450"
+                poster="poster-aula.jpg"
+                preload="metadata">
+
+                <source src="videos/aula-html.mp4" type="video/mp4">
+                <source src="videos/aula-html.webm" type="video/webm">
+
+                <track
+                    src="legendas/aula-html.vtt"
+                    kind="subtitles"
+                    srclang="pt"
+                    label="Português"
+                    default>
+
+                <p>
+                    Seu navegador não suporta vídeo em HTML5.
+                    <a href="videos/aula-html.mp4">
+                        Baixar vídeo
+                    </a>
+                </p>
+
+            </video>
+
+            <figcaption>
+                Vídeo introdutório sobre HTML5 com legendas em português.
+                Fonte: material educacional do curso.
+            </figcaption>
+
+        </figure>
+
+        <hr>
+
+        <!-- BLOCO 2 -->
+        <figure>
+
+            <audio controls preload="metadata">
+
+                <source src="audios/podcast-html.mp3" type="audio/mpeg">
+                <source src="audios/podcast-html.ogg" type="audio/ogg">
+
+                <p>
+                    Seu navegador não suporta áudio em HTML5.
+                    <a href="audios/podcast-html.mp3">
+                        Baixar áudio
+                    </a>
+                </p>
+
+            </audio>
+
+            <figcaption>
+                Episódio: Introdução ao HTML5 —
+                <a href="transcricao.html">
+                    Ler transcrição
+                </a>
+            </figcaption>
+
+        </figure>
+
+        <hr>
+
+        <!-- BLOCO 3 -->
+        <figure>
+
+            <iframe
+                width="800"
+                height="450"
+                src="https://www.youtube-nocookie.com/embed/3oSIqIqzN3M"
+                title="Curso de HTML5 para iniciantes"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <figcaption>
+                Vídeo educacional sobre HTML5 do canal Curso em Vídeo,
+                hospedado na plataforma YouTube.
+            </figcaption>
+
+        </figure>
+
+        <hr>
+
+        <!-- BLOCO 4 -->
+        <figure>
+
+            <picture>
+
+                <source
+                    media="(min-width: 768px)"
+                    srcset="img/banner-wide.jpg">
+
+                <img
+                    src="img/banner-mobile.jpg"
+                    alt="Banner do curso de HTML5 exibido em layout responsivo"
+                    width="800"
+                    height="400">
+
+            </picture>
+
+            <figcaption>
+                Banner responsivo do ambiente virtual de aprendizagem.
+            </figcaption>
+
+        </figure>
+
+    </main>
+
+    <footer>
+        <p>
+            Nome: Seu Nome <br>
+            Matrícula: 000000 <br>
+            Data: 17/05/2026
+        </p>
+    </footer>
+
+</body>
+</html>
+```
