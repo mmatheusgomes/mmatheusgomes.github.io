@@ -1,0 +1,31 @@
+body {
+      background-color: #f0f4f8; 
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      color: #333;
+    }
+
+form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+ { margin-bottom: 15px; }
+
+button {
+    background-color: #2ecc71; /* Cor de fundo do botão */
+    color: white;              /* Cor do texto do botão */
+    border: none;              /* Remove a borda padrão */
+    padding: 10px 20px;        /* Deixa o botão maior */
+    border-radius: 4px;        /* Arredonda os cantos */
+    cursor: pointer;           /* Transforma a seta do mouse em mãozinha */
+  }
+
+  </style>
+</head>
+<body>
+
+
