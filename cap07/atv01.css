@@ -1,0 +1,255 @@
+
+/* =====================================================================
+   Atividade Prática — Refatoração de Seletores e Unidades CSS
+
+   Reflexão (Bloco 1)
+
+   rem é relativo ao tamanho da fonte raiz da página, facilitando
+   acessibilidade e escalabilidade. em é relativo ao elemento atual,
+   sendo útil para espaçamentos proporcionais ao texto. % adapta-se ao
+   tamanho do contêiner. Em layouts responsivos, rem melhora a
+   consistência tipográfica enquanto % ajuda na adaptação do layout.
+   ===================================================================== */
+
+/* ---------- Base ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #333333;
+  background-color: #f5f5f5;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+  background-color: #1565c0;
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.subtitulo {
+  color: #bbdefb;
+  font-size: 1rem;
+}
+
+/* ---------- Menu de navegação ---------- */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+/* Seletor descendente */
+nav a {
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/* Pseudo-elemento solicitado no Bloco 4 */
+.menu a::before {
+  content: "› ";
+  color: #bbdefb;
+  font-weight: bold;
+}
+
+/* Hover */
+nav a:hover,
+.botao:hover {
+  color: #bbdefb;
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding: 2rem;
+  max-width: 80%;
+}
+
+h2 {
+  color: #1565c0;
+  font-size: 1.5rem;
+}
+
+/* Irmão adjacente */
+h2 + p {
+  margin-top: 1rem;
+}
+
+h3 {
+  color: #0d47a1;
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.destaque {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #b71c1c;
+}
+
+/* Irmão geral */
+.destaque ~ p {
+  background-color: #fff8e1;
+}
+
+/* ---------- Grade de trilhas ---------- */
+.cartao {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  padding: 1em;
+  margin: 0.5em;
+}
+
+.cartao:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.cartao:nth-child(even) {
+  background-color: #f0f7ff;
+}
+
+.cartao:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* Regra menos específica */
+.botao {
+  display: inline-block;
+  background-color: #1565c0;
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+}
+
+/*
+A regra abaixo prevalece porque possui maior especificidade.
+
+.botao → especificidade 0,0,1
+.cartao .botao → especificidade 0,0,2
+
+Como possui dois seletores de classe, ela vence o conflito
+sem necessidade de !important.
+*/
+.cartao .botao {
+  background-color: #0d47a1;
+}
+
+/* ---------- Lista de programação ---------- */
+.lista-dias {
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+/* Filho direto */
+.lista-dias > li {
+  font-weight: bold;
+}
+
+.lista-dias > li:first-child {
+  color: #1565c0;
+}
+
+.lista-dias > li:last-child {
+  color: #b71c1c;
+}
+
+/* ---------- Formulário ---------- */
+.formulario {
+  max-width: 60%;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Pseudo-elemento solicitado */
+.formulario label::after {
+  content: " *";
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* Agrupamento */
+input,
+textarea {
+  display: block;
+  width: 20rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #999999;
+}
+
+/* Seletores de atributo */
+input[type="email"] {
+  border: 2px solid #4caf50;
+}
+
+input[type="password"] {
+  border: 2px solid #f44336;
+}
+
+/* Focus */
+input:focus,
+textarea:focus {
+  outline: 2px solid #1565c0;
+}
+
+button {
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #1565c0;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  border: 0;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background-color: #263238;
+  color: #cfd8dc;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+}
+
+/*
+Reflexão (Bloco 2)
+
+O seletor descendente (espaço) seleciona qualquer elemento
+dentro de outro elemento. Já o seletor de filho direto (>)
+seleciona apenas os elementos imediatamente contidos pelo pai.
+*/
+
+/*
+Reflexão (Bloco 3)
+
+:nth-child() permite selecionar elementos com base em sua
+posição na estrutura do documento sem necessidade de criar
+classes extras no HTML.
+*/
