@@ -1,0 +1,230 @@
+/* =====================================================================
+   atv01.css  —  VERSÃO REFATORADA
+   ---------------------------------------------------------------------
+   Reflexão (Bloco 1 — unidades de medida):
+   rem é fixo em relação ao <html>, por isso escala de forma previsível
+   quando o usuário aumenta a fonte do navegador (acessibilidade), mas
+   não muda com o zoom da página (que amplia tudo proporcionalmente).
+   em é relativo ao font-size do próprio elemento (ou do pai), então
+   acompanha mudanças locais de fonte — ideal para espaçamentos internos
+   de componentes como cartões e botões, que devem crescer junto com o
+   texto. % é relativo ao elemento pai, útil para larguras fluidas em
+   layout (grade, campos de formulário) que precisam se adaptar ao
+   contêiner, não à fonte. Zoom do navegador amplia todas as unidades
+   igualmente; redimensionar a janela só afeta % (e vw/vh).
+   ===================================================================== */
+
+/* ---------- Base ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: #333333;
+  background-color: #f5f5f5;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+  background-color: #1565c0;
+  padding: 2rem;
+}
+h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0;
+}
+.subtitulo {
+  color: #bbdefb;
+  font-size: 1rem;
+}
+
+/* ---------- Menu de navegação ---------- */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+.menu li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+/* Seletor descendente: atinge QUALQUER <a> dentro de .menu,
+   não importa a profundidade (aqui: .menu > ul > li > a).
+   Se usássemos ".menu > a" (filho direto), a regra não pegaria
+   nada, pois não há <a> filho imediato de .menu — apenas de <li>. */
+.menu a {
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.menu a:hover {
+  color: #bbdefb;
+  text-decoration: underline;
+}
+.menu a::before {
+  content: "› ";
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding: 2rem;
+  max-width: 60rem; /* 960px na base de 16px, mas escala com a fonte raiz */
+}
+h2 {
+  color: #1565c0;
+  font-size: 1.5rem;
+}
+h3 {
+  color: #0d47a1;
+  font-size: 1.25rem;
+}
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.destaque {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #b71c1c;
+}
+
+/* Irmão adjacente (+): recua apenas o parágrafo que vem
+   IMEDIATAMENTE após um h2, sem afetar os demais parágrafos. */
+h2 + p {
+  margin-top: 1.5rem;
+}
+
+/* Irmão geral (~): estiliza todos os parágrafos que sucedem
+   .destaque dentro da mesma seção (não apenas o próximo). */
+.destaque ~ p {
+  color: #555555;
+  font-style: italic;
+}
+
+/* ---------- Grade de trilhas ---------- */
+.cartao {
+  display: inline-block;
+  width: 26%;
+  vertical-align: top;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  padding: 1em;
+  margin: 0.5em;
+}
+/* Efeito zebra com :nth-child(), sem precisar de classes extras no HTML */
+.cartao:nth-child(odd) {
+  background-color: #ffffff;
+}
+.cartao:nth-child(even) {
+  background-color: #e3f2fd;
+}
+/* :not() — margem inferior em todos os cartões, exceto o último */
+.cartao:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.botao {
+  display: inline-block;
+  background-color: #1565c0;
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  margin-top: 0.5em;
+}
+.botao:hover {
+  background-color: #0d47a1;
+}
+
+/* Especificidade (Bloco 4):
+   ".botao" tem especificidade (0,1,0).
+   ".cartao a.botao" tem especificidade (0,2,1) — duas classes e
+   um tipo — logo é mais específica e VENCE sobre ".botao", mesmo
+   vindo antes na cascata, sem necessidade de !important. */
+.cartao a.botao {
+  background-color: #0d47a1;
+}
+
+/* ---------- Lista de programação ---------- */
+.lista-dias {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+/* Filho direto (>): estiliza somente os itens de primeiro nível */
+.lista-dias > li {
+  font-weight: bold;
+}
+/* Restaura o peso normal nos itens aninhados, já que font-weight
+   é herdado e, sem isso, os <li> internos ficariam em negrito também */
+.lista-dias > li > ul > li {
+  font-weight: normal;
+}
+.lista-dias > li:first-child {
+  border-top: 2px solid #1565c0;
+  padding-top: 0.5em;
+}
+.lista-dias > li:last-child {
+  border-bottom: 2px solid #1565c0;
+  padding-bottom: 0.5em;
+}
+
+/* ---------- Formulário ---------- */
+.formulario {
+  max-width: 30rem;
+}
+label {
+  display: block;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+/* Pseudo-elemento ::after — indicador visual após o rótulo */
+label::after {
+  content: " *";
+  color: #b71c1c;
+}
+
+/* Agrupamento: input e textarea compartilhavam exatamente as
+   mesmas regras — unificadas para eliminar duplicação */
+input,
+textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5em;
+  margin-top: 0.25rem;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1565c0;
+}
+
+/* Seletores de atributo: bordas distintas por tipo de campo */
+input[type="email"] {
+  border-color: #0d47a1;
+}
+input[type="password"] {
+  border-color: #b71c1c;
+}
+
+button {
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #1565c0;
+  padding: 0.5em 1.5em;
+  margin-top: 1rem;
+  border: 0;
+}
+button:hover {
+  background-color: #0d47a1;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background-color: #263238;
+  color: #cfd8dc;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+}
