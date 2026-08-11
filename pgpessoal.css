@@ -20,40 +20,52 @@
 
 .tabela-atividades {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin-bottom: 30px;
     font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Cabeçalho */
 .tabela-atividades th {
-    background-color: red;
+    background-color: #1e3a5f;
     color: white;
-    padding: 12px;
+    padding: 15px;
     text-align: left;
-    border: 1px solid red;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 3px solid #4a90e2;
 }
 
+/* Células */
 .tabela-atividades td {
-    padding: 12px;
-    border: 1px solid red;
+    padding: 14px 15px;
+    color: #333333;
+    border-bottom: 1px solid #e2e8f0;
 }
 
+/* Linhas alternadas */
 .tabela-atividades tr:nth-child(even) {
-    background-color: #ffe5e5;
+    background-color: #f4f7fb;
 }
 
+.tabela-atividades tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Efeito ao passar o mouse */
 .tabela-atividades tr:hover {
-    background-color: #ffcccc;
+    background-color: #e8f1fb;
+    transition: 0.2s;
 }
 
+/* Links */
 .tabela-atividades a {
-    color: red;
+    color: #2563eb;
     font-weight: bold;
     text-decoration: none;
 }
-
-.tabela-atividades a:hover {
-    color: darkred;
-    text-decoration: underline;
-}
-
