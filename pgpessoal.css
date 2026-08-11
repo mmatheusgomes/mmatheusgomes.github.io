@@ -18,3 +18,42 @@
     Matheus Gomes Costa
 </p>
 
+.tabela-atividades {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.tabela-atividades th {
+    background-color: red;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border: 1px solid red;
+}
+
+.tabela-atividades td {
+    padding: 12px;
+    border: 1px solid red;
+}
+
+.tabela-atividades tr:nth-child(even) {
+    background-color: #ffe5e5;
+}
+
+.tabela-atividades tr:hover {
+    background-color: #ffcccc;
+}
+
+.tabela-atividades a {
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tabela-atividades a:hover {
+    color: darkred;
+    text-decoration: underline;
+}
+
