@@ -1,178 +1,100 @@
 <!DOCTYPE html>
+<!-- ============================================================
+     TEMPLATE — Página pessoal com CSS Grid
+     Programação Web / Introdução às Tecnologias Web — IFAL
+     COMO USAR:
+     1) Copie ESTE index.html para o seu repositório (não mude a estrutura).
+     2) Escolha UM dos 3 temas de CSS (tema-1-indigo.css, tema-2-escuro.css
+        ou tema-3-editorial.css) e salve-o no seu projeto como  estilo.css
+        (é o nome que este HTML carrega logo abaixo).
+     3) Troque os textos marcados com "TROQUE" pelo seu conteúdo.
+     IMPORTANTE: o LAYOUT é feito com CSS Grid e é o mesmo nos 3 temas.
+     Você escolhe a APARÊNCIA (fonte, cores, bordas), não o layout.
+     ============================================================ -->
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Pessoal - Matheus Gomes Costa</title>
-    <link rel="stylesheet" href="pgpessoal.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Pessoal — Matheus Gomes Costa</title>
+  <!-- Salve o tema escolhido como "estilo.css" (mesma pasta deste arquivo) -->
+  <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
+  <div class="pagina">
 
- <p class="nome">Matheus Gomes Costa</p>
+    <!-- ====== CABEÇALHO — TROQUE pelo seu nome e sua frase ====== -->
+    <header class="cabecalho">
+      <h1>Matheus Gomes Costa</h1>
+      <p>Estudante de Desenvolvimento de Sistemas · IFAL</p>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
 
-
-    <br>
-    
-
-    <img
-        src="fotopessoal.png"
-        width="300"
-        height="300"
-        alt="Foto pessoal de Matheus Gomes Costa"
-        class="imagem-redonda"
-    />
-
-    <br><br>
-
-    <h2><b> Informações Pessoais </b></h2>
-    
-    <h4><b>1 Ano EM | 921C | Desenvolvimento de Sistemas </b></h4>
-
-     <h2><b> Idade e Data de Nascimento</b></h2>
-
-    <h4><b>16 Anos | Nascido no dia 07/10/2009</b></h4>
-
-    <h2><b> Hobbies e Interesses</b></h2>
-
-    <h4>
-        Atualmente estou lendo o livro "O Homem Mais Rico da Babilônia".
+    <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+    <main class="principal">
+      <section id="sobre" class="cartao">
+        <h2>Sobre mim</h2>
+        <!-- TROQUE por uma breve apresentação sua -->
+        <p>Atualmente estou lendo o livro "O Homem Mais Rico da Babilônia".
         Gosto de jogar tênis, futebol e jogos no computador.
         Pratico academia para cuidar da saúde física e pretendo fazer terapia
         para melhorar minha saúde mental. Também gosto de sair com minha
-        namorada e colecionar tênis.
-    </h4>
+        namorada e colecionar tênis.</p>
+      </section>
 
-    <br>
+      <section id="projetos" class="cartao">
+        <h2>Projetos</h2>
+        <!-- Galeria com Grid: cada .projeto é um card; adicione/remova à vontade -->
+        <div class="projetos">
+          <article class="projeto">
+            <h3>Projeto 1</h3>
+            <p>O que é e o que você fez. TROQUE por um projeto seu.</p>
+          </article>
+          <article class="projeto">
+            <h3>Projeto 2</h3>
+            <p>Descrição curta do projeto.</p>
+          </article>
+          <article class="projeto">
+            <h3>Projeto 3</h3>
+            <p>Descrição curta do projeto.</p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-    <h2><b>Conhecimentos Técnicos</b></h2>
+    <!-- ====== BARRA LATERAL ====== -->
+    <aside class="lateral">
+      <section class="cartao">
+        <h2>Habilidades</h2>
+        <!-- TROQUE pelas suas habilidades -->
+        <ul class="habilidades">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Conhecimento intermediário em hardware</li>
+          <li>Montagem e desmontagem de desktops</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
 
-    <ul>
-        <li>Conhecimento básico em JavaScript</li>
-        <li>Desenvolvendo habilidades em HTML</li>
-        <li>Conhecimento intermediário em hardware</li>
-        <li>Montagem e desmontagem de desktops</li>
-    </ul>
+      <section id="contato" class="cartao">
+        <h2>Contato</h2>
+        <!-- TROQUE pelos seus links -->
+        <ul class="contato">
+          <li>✉️ <a href="mailto:voce@exemplo.com">mgc2@aluno.ifal.edu.br</a></li>
+          <li>🐙 <a href="https://github.com/SEU-USUARIO">github.com/mmatheusgomes</a></li>
+        </ul>
+      </section>
+    </aside>
 
-    <br>
+    <!-- ====== RODAPÉ — TROQUE o nome ====== -->
+    <footer class="rodape">© 2026 Matheus Gomes Costa · feito com HTML + CSS Grid</footer>
 
-    <h2><b>Atividades da Disciplina</b></h2>
-
-    <hr>
-
-    <!-- BLOCO DAS ATIVIDADES -->
-
-   <nav aria-label="Atividades">
-
-    <h2>Capítulo 4 - Tabelas, Listas e Mídias</h2>
-
-    <table class="tabela-atividades">
-        <thead>
-            <tr>
-                <th>Atividade</th>
-                <th>Link</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>Atividade 1 - Tabela Básica</td>
-                <td><a href="cap04/at01.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>Atividade 2 - Tabela Semântica</td>
-                <td><a href="cap04/at02.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>Atividade 3 - Listas Avançadas</td>
-                <td><a href="cap04/at03.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>Atividade 4 - Página Multimídia</td>
-                <td><a href="cap04/at04.html">Acessar</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <h2>Capítulo 5 - Formulários HTML</h2>
-
-    <table class="tabela-atividades">
-        <thead>
-            <tr>
-                <th>Atividade</th>
-                <th>Link</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>AT01 - Formulário de Contato</td>
-                <td><a href="cap05/at01.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>AT02 - Cadastro de Usuário</td>
-                <td><a href="cap05/at02.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>AT03 - Matrícula Acadêmica</td>
-                <td><a href="cap05/at03.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>AT04 - Inscrição em Evento</td>
-                <td><a href="cap05/at04.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>AT05 - Pesquisa Acadêmica</td>
-                <td><a href="cap05/at05.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>Página Web em Dupla - 02/06/26</td>
-                <td>
-                    <a href="text atividade-css01-sala/index.html">
-                        Acessar
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <h2>Capítulo 7</h2>
-
-    <table class="tabela-atividades">
-        <thead>
-            <tr>
-                <th>Atividade</th>
-                <th>Link</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            <tr>
-                <td>Capítulo 7 - Atividade 1</td>
-                <td><a href="cap07/index.html">Acessar</a></td>
-            </tr>
-
-            <tr>
-                <td>Capítulo 7 - Atividade 2</td>
-                <td><a href="cap07/atv02.html">Acessar</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-</nav>
-
-
+  </div>
 </body>
 
 </html>
